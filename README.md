@@ -467,6 +467,10 @@ SELECT first_name, last_name, COUNT(attending_doctor_id) AS total_admission
 FROM admissions
          JOIN doctors ON admissions.attending_doctor_id = doctors.doctor_id
 GROUP BY first_name, last_name;
+ 
+---SQL
+SELECT first_name, last_name, count(doctor_id) from doctors join admissions  on doctors.doctor_id = admissions.attending_doctor_id
+group by first_name, last_name;
 ```
 
 20. For each doctor, display their id, full name, and the first and last admission date they attended.
