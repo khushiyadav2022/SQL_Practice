@@ -452,6 +452,11 @@ SELECT patient_id, attending_doctor_id, diagnosis
 FROM admissions
 WHERE patient_id % 2 = 1 AND attending_doctor_id IN (1, 5, 19)
    OR (attending_doctor_id LIKE '%2%' AND LENGTH(patient_id) = 3);
+
+---SQL
+SELECT patient_id, attending_doctor_id, diagnosis from admissions
+where (patient_id % 2)!=0 and attending_doctor_id in (1,5,19)
+or attending_doctor_id like '%2%' and len(patient_id)=3;
 ```
 
 19. Show first_name, last_name, and the total number of admissions attended for each doctor.
